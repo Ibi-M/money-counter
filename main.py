@@ -12,7 +12,7 @@ p5 = ""
 p2 = ""
 p1 = ""
 
-end = [pound2,pound1,p50,p20,p10,p5,p1,p1]
+end = [pound2,pound1,p50,p20,p10,p5,p2,p1]
 
 total = 0
 index = 0
@@ -41,16 +41,22 @@ elif spend < total:
     print ("Your now have £", total, "left")
 
 index2 = 7
-
+index3 = 0
+count = 0
 done = False
 
 while done == False:
-    while total > 0:
+    while total >= 0:
+        count = 0
         total = total - value[index2]
-        if total < 0:
+        count = count + 1
+        if total <= 0:
+            end[index3] = count - 1
+            index3 = index3 + 1
             total = total + value[index2]
-            
-            index2 = index2 - 1
-            print (total)
 
+            print (total)
+            print ("hello")
+            index2 = index2 - 1
+            print (end)
 
